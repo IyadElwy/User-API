@@ -1,0 +1,20 @@
+const express = require("express");
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+const devController = require('./../controllers/devControllers');
+const authController = require('./../controllers/authController');
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const router = express.Router();
+
+router.get('/retrieveuser/:usertoken', devController.protectDev);
+router.get('/retrieveguestuser/:usertoken', devController.protectDevGuest);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+module.exports = router;
